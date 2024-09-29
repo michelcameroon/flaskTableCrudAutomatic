@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Records</title>
+</head>
+<body>
+    <h1>Your Records</h1>
+    <a href="{{ url_for('new_record') }}">Add New Record</a>
+
+   <table border="1">
+      <tr>
+        {% for nameNoId in namesNoId %}
+       
+       <th>{{ nameNoId }}</th>
+       
+           {% endfor %}
+        
+    </tr>  
+   
+            
+        {% for record in records %}
+            
+                  
+              <tr>
+           {% for nameNoId in namesNoId %}
+
+              <td>
+                {{ record[nameNoId] }}
+                  </td>
+                 
+                   
+           {% endfor %}
+
+
+             
+
+            
+                  
+                  
+              
+
+                  <td>
+                <a href="{{ url_for('update_record', id=record.id) }}">update</a>
+                  </td>
+
+                  <td>
+                <a href="{{ url_for('delete_record', id=record.id) }}">delete</a>
+                  </td>
+
+
+                   
+</tr>
+
+           {% endfor %}
+   
+    
+</table>
+
+    <a href="{{ url_for('new_record') }}">Add New Record</a>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Records</title>
+</head>
+<body>
+    <h1>Your Records</h1>
+   <table border="1">
+   <tr>
+    <th>FirstName</th>
+   
+    <ul>
+        <td>
+        {% for record in records %}
+            <li>
+    </td>
+     </tr>
+                <a href="{{ url_for('update_record', id=record.id) }}">{{ record.firstName }}</a>
+                </li>
+           {% endfor %}
+    </ul>
+    </td>
+   </tr>
+</table>
+
+    <a href="{{ url_for('new_record') }}">Add New Record</a>
+</body>
+</html>
+
+
+
+

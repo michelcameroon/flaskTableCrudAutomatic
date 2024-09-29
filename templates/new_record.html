@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add New Record</title>
+</head>
+<body>
+    <h1>Add New Record</h1>
+    <form method="POST">
+        {% for nameNoId in namesNoId %}
+         <br> 
+         {{ nameNoId }}
+                <br>
+                <input type="text" name={{nameNoId}}>
+                
+        {% endfor %}
+        
+        <br>
+        <input type="submit" value="Add">
+    </form>
+</body>
+</html>
